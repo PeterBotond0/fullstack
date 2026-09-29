@@ -5,7 +5,7 @@ use App\Http\Controllers\AlcoholController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-    return 'Működik a Laravel!';
+    return view('welcome');
 });
 
 Route::get('/alcohols', [AlcoholController::class, 'index'])
