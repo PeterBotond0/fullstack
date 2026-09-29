@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -6,6 +7,143 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f3ff;
+    color: #333;
+}
+
+/* Navigáció */
+
+.navbar {
+    background: #6c3fc5;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ffd54f;
+}
+
+/* Kezdő rész */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #8e5de7, #ff72a8);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Gomb */
+
+.gomb {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #ffd54f;
+    color: #4a2787;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.gomb:hover {
+    background: #ffca28;
+}
+
+/* Termékek */
+
+.termekek {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.termekek h2 {
+    color: #5b35a5;
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.kartya-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.kartya {
+    width: 230px;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.kartya:hover {
+    transform: translateY(-5px);
+}
+
+.ikon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.kartya h3 {
+    color: #6c3fc5;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.kartya p {
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Lábléc */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4a2787;
+    color: white;
+}
+
