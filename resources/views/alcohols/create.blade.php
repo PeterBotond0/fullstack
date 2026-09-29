@@ -5,7 +5,6 @@
 @section('content')
 <h1>Új kategória</h1>
 
-  @include('layouts.flash')
 
   <form action="{{ route('alcohols.store') }}" method="POST">
       @csrf

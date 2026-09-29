@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlcoholController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Működik a Laravel!';
 });
+
 Route::get('/alcohols', [AlcoholController::class, 'index'])
     ->name('alcohols.index');
 

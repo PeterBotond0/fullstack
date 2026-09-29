@@ -10,14 +10,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $cities = Product::with('alcohol')->get();
+        $products = Product::with('alcohol')->get();
 
         return view('products.index', compact('products'));
     }
 
     public function create()
     {
-        $counties = Alcohol::all();
+        $alcohols = Alcohol::all();
 
         return view('products.create', compact('alcohols'));
     }
@@ -26,7 +26,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'int', 'max:20'],
+            'price' => ['required', 'int', 'min:0'],
             'alcohol_id' => ['required', 'exists:alcohols,id'],
         ]);
 
@@ -44,14 +44,16 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $alcohols = Alcohol::all();
+
+    return view('products.edit', compact('product', 'alcohols'));
     }
 
     public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'int', 'max:20'],
+            'price' => ['required', 'int', 'min:0'],
             'alcohol_id' => ['required', 'exists:alcohols,id'],
         ]);
 
