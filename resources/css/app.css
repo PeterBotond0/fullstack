@@ -1,4 +1,3 @@
-
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -21,8 +20,6 @@ body {
     background: #f5f3ff;
     color: #333;
 }
-
-/* Navigáció */
 
 .navbar {
     background: #6c3fc5;
@@ -53,8 +50,6 @@ body {
     color: #ffd54f;
 }
 
-/* Kezdő rész */
-
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -74,8 +69,6 @@ body {
     line-height: 1.6;
 }
 
-/* Gomb */
-
 .gomb {
     display: inline-block;
     padding: 13px 28px;
@@ -89,8 +82,6 @@ body {
 .gomb:hover {
     background: #ffca28;
 }
-
-/* Termékek */
 
 .termekek {
     padding: 60px 30px;
@@ -116,6 +107,7 @@ body {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: 0.2s;
 }
 
 .kartya:hover {
@@ -138,7 +130,384 @@ body {
     color: #555;
 }
 
-/* Lábléc */
+.termek-oldal {
+    min-height: 80vh;
+    background: #f5f3ff;
+}
+
+.termek-fejlec {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #8e5de7, #ff72a8);
+    color: white;
+}
+
+.termek-fejlec h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+}
+
+.termek-fejlec p {
+    font-size: 18px;
+}
+
+.termek-tartalom {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 30px 70px;
+}
+
+.uj-termek-gomb {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 13px 25px;
+    background: #ffd54f;
+    color: #4a2787;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.uj-termek-gomb:hover {
+    background: #ffca28;
+    transform: translateY(-2px);
+}
+
+.termek-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.termek-kartya {
+    width: 270px;
+    min-height: 230px;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.2s;
+}
+
+.termek-kartya:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.termek-ikon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.termek-kartya h2 {
+    color: #6c3fc5;
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.termek-gombok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.termek-gombok form {
+    margin: 0;
+}
+
+.szerkesztes-gomb {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #6c3fc5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.szerkesztes-gomb:hover {
+    background: #54309d;
+    transform: translateY(-2px);
+}
+
+.torles-gomb {
+    padding: 10px 16px;
+    background: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.torles-gomb:hover {
+    background: #e84d65;
+    transform: translateY(-2px);
+}
+
+.kategoria-oldal {
+    min-height: 80vh;
+    background: #f5f3ff;
+}
+
+.kategoria-fejlec {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #8e5de7, #ff72a8);
+    color: white;
+}
+
+.kategoria-fejlec h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+}
+
+.kategoria-fejlec p {
+    font-size: 18px;
+}
+
+.kategoria-tartalom {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 30px 70px;
+}
+
+.uj-kategoria-gomb {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 13px 25px;
+    background: #ffd54f;
+    color: #4a2787;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.uj-kategoria-gomb:hover {
+    background: #ffca28;
+    transform: translateY(-2px);
+}
+
+.kategoria-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.kategoria-kartya {
+    width: 270px;
+    min-height: 230px;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.2s;
+}
+
+.kategoria-kartya:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.kategoria-ikon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.kategoria-kartya h2 {
+    color: #6c3fc5;
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.kategoria-gombok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.kategoria-gombok form {
+    margin: 0;
+}
+
+.kategoria-form-oldal {
+    min-height: 80vh;
+    background: #f5f3ff;
+}
+
+.kategoria-form-fejlec {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #8e5de7, #ff72a8);
+    color: white;
+}
+
+.kategoria-form-fejlec h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+}
+
+.kategoria-form-fejlec p {
+    font-size: 18px;
+}
+
+.kategoria-form-kartya {
+    width: 500px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.kategoria-form-kartya form {
+    display: flex;
+    flex-direction: column;
+}
+
+.kategoria-form-kartya label {
+    color: #5b35a5;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.kategoria-form-kartya input {
+    padding: 13px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.kategoria-form-kartya input:focus {
+    border-color: #8e5de7;
+}
+
+.error {
+    color: #e84d65;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.form-gombok {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.mentes-gomb {
+    padding: 12px 25px;
+    background: #6c3fc5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mentes-gomb:hover {
+    background: #54309d;
+    transform: translateY(-2px);
+}
+
+.megse-gomb {
+    padding: 12px 25px;
+    background: #ffd54f;
+    color: #4a2787;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.megse-gomb:hover {
+    background: #ffca28;
+    transform: translateY(-2px);
+}
+
+.termek-form-oldal {
+    min-height: 80vh;
+    background: #f5f3ff;
+}
+
+.termek-form-fejlec {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #8e5de7, #ff72a8);
+    color: white;
+}
+
+.termek-form-fejlec h1 {
+    font-size: 44px;
+    margin-bottom: 12px;
+}
+
+.termek-form-fejlec p {
+    font-size: 18px;
+}
+
+.termek-form-kartya {
+    width: 550px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.termek-form-kartya form {
+    display: flex;
+    flex-direction: column;
+}
+
+.termek-form-kartya label {
+    color: #5b35a5;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.termek-form-kartya input,
+.termek-form-kartya select {
+    padding: 13px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.termek-form-kartya input:focus,
+.termek-form-kartya select:focus {
+    border-color: #8e5de7;
+}
+
+.termek-form-gombok {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
 
 footer {
     text-align: center;
@@ -146,4 +515,3 @@ footer {
     background: #4a2787;
     color: white;
 }
-

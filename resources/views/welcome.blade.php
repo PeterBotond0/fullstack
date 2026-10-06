@@ -19,7 +19,6 @@
 
         <div class="menu">
             <a href="/">Kezdőlap</a>
-            <a href="/products">Termékek</a>
             <a href="/alcohols">Kategóriák</a>
         </div>
 
