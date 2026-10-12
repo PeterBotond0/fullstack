@@ -6,12 +6,13 @@
 
     <title>Italbolt</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
 
-    <nav class="navbar">
+    <nav class="navbar navbar-expand flex-wrap gap-3">
 
         <div class="logo">
             🍹 Italbolt
@@ -47,37 +48,37 @@
 
         <div class="kartya-container">
 
-            <div class="kartya">
+            <a class="kartya card text-decoration-none" href="{{ route('products.index', ['category' => 'beer']) }}">
                 <div class="ikon">🍺</div>
                 <h3>Sörök</h3>
                 <p>
                     Különböző sörök széles választéka.
                 </p>
-            </div>
+            </a>
 
-            <div class="kartya">
+            <a class="kartya card text-decoration-none" href="{{ route('products.index', ['category' => 'wine']) }}">
                 <div class="ikon">🍷</div>
                 <h3>Borok</h3>
                 <p>
                     Vörös-, fehér- és roséborok.
                 </p>
-            </div>
+            </a>
 
-            <div class="kartya">
+            <a class="kartya card text-decoration-none" href="{{ route('products.index', ['category' => 'spirits']) }}">
                 <div class="ikon">🥃</div>
                 <h3>Röviditalok</h3>
                 <p>
                     Whisky, vodka, rum és egyéb italok.
                 </p>
-            </div>
+            </a>
 
-            <div class="kartya">
+            <a class="kartya card text-decoration-none" href="{{ route('products.index', ['category' => 'cocktails']) }}">
                 <div class="ikon">🍹</div>
                 <h3>Koktélok</h3>
                 <p>
                     Különleges italok és koktélalapanyagok.
                 </p>
-            </div>
+            </a>
 
         </div>
 

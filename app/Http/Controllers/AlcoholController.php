@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class AlcoholController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $alcohols = Alcohol::with('products')->get();
+        $validated = $request->validate(['search' => ['nullable', 'string', 'max:255']]);
+        $search = trim($validated['search'] ?? '');
+        $alcohols = Alcohol::query()
+            ->when($search !== '', fn ($query) => $query->where('name', 'like', '%' . $search . '%'))
+            ->get();
 
-        return view('alcohols.index', compact('alcohols'));
+        return view('alcohols.index', compact('alcohols', 'search'));
     }
     public function create()
     {

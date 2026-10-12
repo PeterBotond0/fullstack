@@ -16,9 +16,9 @@
         <form action="{{ route('products.store') }}" method="POST">
             @csrf
 
-            <label for="name">Termék neve</label>
+            <label class="form-label" for="name">Termék neve</label>
 
-            <input
+            <input class="form-control"
                 type="text"
                 name="name"
                 id="name"
@@ -31,9 +31,9 @@
             @enderror
 
 
-            <label for="price">Ár</label>
+            <label class="form-label" for="price">Ár</label>
 
-            <input
+            <input class="form-control"
                 type="text"
                 name="price"
                 id="price"
@@ -46,9 +46,9 @@
             @enderror
 
 
-            <label for="alcohol_id">Kategória</label>
+            <label class="form-label" for="alcohol_id">Kategória</label>
 
-            <select name="alcohol_id" id="alcohol_id" required>
+            <select class="form-select" name="alcohol_id" id="alcohol_id" required>
                 <option value="">Válassz kategóriát</option>
 
                 @foreach($alcohols as $alcohol)
@@ -68,11 +68,11 @@
 
             <div class="termek-form-gombok">
 
-                <button type="submit" class="mentes-gomb">
+                <button type="submit" class="btn mentes-gomb">
                     Mentés
                 </button>
 
-                <a href="{{ route('products.index') }}" class="megse-gomb">
+                <a href="{{ route('products.index') }}" class="btn megse-gomb">
                     Mégse
                 </a>
 

@@ -8,11 +8,32 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('alcohol')->get();
+        $validated = $request->validate([
+            'search' => ['nullable', 'string', 'max:255'],
+            'alcohol_id' => ['nullable', 'integer', 'exists:alcohols,id'],
+            'category' => ['nullable', 'in:beer,wine,spirits,cocktails'],
+        ]);
+        $search = trim($validated['search'] ?? '');
+        $alcoholId = $validated['alcohol_id'] ?? null;
+        $category = $validated['category'] ?? null;
+        $groups = [
+            'beer' => ['Sör', 'Sörök'],
+            'wine' => ['Bor', 'Borok'],
+            'spirits' => ['Rövidital', 'Röviditalok', 'Pálinka', 'Gin', 'Vodka', 'Whiskey', 'Whisky', 'Rum'],
+            'cocktails' => ['Koktél', 'Koktélok', 'Koktélalapanyagok'],
+        ];
+        $groupLabels = ['beer' => 'Sörök', 'wine' => 'Borok', 'spirits' => 'Röviditalok', 'cocktails' => 'Koktélok'];
+        $alcohols = Alcohol::all();
+        $products = Product::with('alcohol')
+            ->when($search !== '', fn ($query) => $query->where('name', 'like', '%' . $search . '%'))
+            ->when($alcoholId, fn ($query) => $query->where('alcohol_id', $alcoholId))
+            ->when(!$alcoholId && $category, fn ($query) => $query->whereHas('alcohol',
+                fn ($parent) => $parent->whereIn('name', $groups[$category])))
+            ->get();
 
-        return view('products.index', compact('products'));
+        return view('products.index', compact('products', 'alcohols', 'search', 'alcoholId', 'category', 'groupLabels'));
     }
 
     public function create()

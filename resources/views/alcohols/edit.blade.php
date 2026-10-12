@@ -17,9 +17,9 @@
             @csrf
             @method('PATCH')
 
-            <label for="name">Kategória neve</label>
+            <label class="form-label" for="name">Kategória neve</label>
 
-            <input
+            <input class="form-control"
                 type="text"
                 name="name"
                 id="name"
@@ -33,11 +33,11 @@
 
             <div class="form-gombok">
 
-                <button type="submit" class="mentes-gomb">
+                <button type="submit" class="btn mentes-gomb">
                     Mentés
                 </button>
 
-                <a href="{{ route('alcohols.index') }}" class="megse-gomb">
+                <a href="{{ route('alcohols.index') }}" class="btn megse-gomb">
                     Mégse
                 </a>
 

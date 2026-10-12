@@ -1,14 +1,3 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -515,3 +504,24 @@ footer {
     background: #4a2787;
     color: white;
 }
+.category-link { color: inherit; text-decoration: none; }
+.category-link:hover { text-decoration: underline; }
+.category-link:focus-visible, .kartya:focus-visible { outline: 3px solid #6c3fc5; outline-offset: 4px; }
+@media (max-width: 576px) {
+    .navbar { padding: 20px; }
+    .menu { flex-wrap: wrap; gap: 15px; }
+    .hero h1 { font-size: 34px; }
+}
+
+/* A kategóriakártya három művelete. */
+.kategoria-kartya { width: 360px; max-width: 100%; }
+.kategoria-gombok { flex-wrap: wrap; }
+.termekek-gomb {
+    padding: 10px 16px;
+    background: #ffd54f;
+    color: #4a2787;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.termekek-gomb:hover { background: #ffca28; color: #4a2787; transform: translateY(-2px); }
